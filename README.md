@@ -9,7 +9,7 @@ ________________________________________________________________________________
 
 
 ```
-git clone https://github.com/luishenriquesenai/KAVG.ourmet.git
+git clone https://github.com/oGuilherme1/KAVG.ourmet.git
 ```
 
 ```
