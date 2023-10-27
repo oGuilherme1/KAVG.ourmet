@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('car_shopping', function (Blueprint $table) {
             $table->id();
-            $table->string('produtos');
+            $table->string('products');
             $table->foreignId('user_id');
             $table->integer('quantidade');
+            $table->string('valor');
             $table->timestamps();
         });
     }
