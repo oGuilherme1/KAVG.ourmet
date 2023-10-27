@@ -17,5 +17,14 @@ export default {
         },
     },
 
+    theme: {
+        extend: {
+          colors: {
+            'marrom': '#331B17',
+            'marrom-claro': '#E1BDA0',
+          }
+        }
+      },
+
     plugins: [forms],
 };
