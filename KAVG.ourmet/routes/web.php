@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,8 @@ Route::get('/', function () {
 Route::get('/Produtos', function () {
     return view('produto');
 })->middleware(['auth', 'verified'])->name('produtos');
+
+Route::get('/products', [ProductController::class,'index'])->name('products');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
