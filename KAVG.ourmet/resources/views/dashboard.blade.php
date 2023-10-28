@@ -5,7 +5,7 @@
 
         <!-- Barra de tarefa lateral -->
 
-        <div :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'" class="fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform bg-gray-900 lg:translate-x-0 lg:static lg:inset-0">
+        <div :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'" class="fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform bg-marrom-claro lg:translate-x-0 lg:static lg:inset-0">
             <div class="flex items-center justify-center mt-8">
                 <div class="flex items-center">
 
@@ -15,7 +15,7 @@
             </div>
 
             <nav class="mt-10">
-                <a class="flex items-center px-6 py-2 mt-4 text-gray-100 bg-gray-700 bg-opacity-25" href="#">
+                <a class="flex items-center px-6 py-2 mt-4 text-gray-100 bg-white bg-opacity-25" href="#">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
@@ -24,7 +24,7 @@
                     <span class="mx-3">Dashboard KAVG</span>
                 </a>
 
-                <a class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100" href="#">
+                <a class="flex items-center px-6 py-2 mt-4 text-white hover:bg-white hover:bg-opacity-25 hover:text-gray-100" href="#">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z">
                         </path>
@@ -33,7 +33,7 @@
                     <span class="mx-3">UI Elements</span>
                 </a>
 
-                <a class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100" href="#">
+                <a class="flex items-center px-6 py-2 mt-4 text-white hover:bg-white hover:bg-opacity-25 hover:text-gray-100" href="#">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
                         </path>
@@ -42,7 +42,7 @@
                     <span class="mx-3">Tables</span>
                 </a>
 
-                <a class="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100" href="#">
+                <a class="flex items-center px-6 py-2 mt-4 text-white hover:bg-white hover:bg-opacity-25 hover:text-gray-100" href="#">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
                         </path>
@@ -129,7 +129,7 @@
                         <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
                             <div class="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
 
-                                <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                                <div class="w-full bg-white border border-marrom-claro rounded-lg shadow dark:bg-white dark:border-gray-700">
                                     <div class="sm:hidden">
                                         <label for="tabs" class="sr-only">Select tab</label>
                                         <select id="tabs" class="bg-gray-50 border-0 border-b border-gray-200 text-gray-900 text-sm rounded-t-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -140,17 +140,17 @@
                                     </div>
                                     <ul class="hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-lg sm:flex dark:divide-gray-600 dark:text-gray-400" id="fullWidthTab" data-tabs-toggle="#fullWidthTabContent" role="tablist">
                                         <li class="w-full">
-                                            <button id="stats-tab" data-tabs-target="#stats" type="button" role="tab" aria-controls="stats" aria-selected="true" class="inline-block w-full p-4 rounded-tl-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Usuários</button>
+                                            <button id="stats-tab" data-tabs-target="#stats" type="button" role="tab" aria-controls="stats" aria-selected="true" class="inline-block w-full p-4 rounded-tl-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-marrom-claro dark:hover:bg-marrom-claro">Usuários</button>
                                         </li>
                                         <li class="w-full">
-                                            <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false" class="inline-block w-full p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Carrinho</button>
+                                            <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false" class="inline-block w-full p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-marrom-claro dark:hover:bg-marrom-claro">Carrinho</button>
                                         </li>
                                         <li class="w-full">
-                                            <button id="faq-tab" data-tabs-target="#faq" type="button" role="tab" aria-controls="faq" aria-selected="false" class="inline-block w-full p-4 rounded-tr-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Produtos</button>
+                                            <button id="faq-tab" data-tabs-target="#faq" type="button" role="tab" aria-controls="faq" aria-selected="false" class="inline-block w-full p-4 rounded-tr-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-marrom-claro dark:hover:bg-marrom-claro">Produtos</button>
                                         </li>
                                     </ul>
                                     <div id="fullWidthTabContent" class="border-t border-gray-200 dark:border-gray-600">
-                                        <div class="hidden p-4 bg-white rounded-lg dark:bg-gray-800" id="stats" role="tabpanel" aria-labelledby="stats-tab">
+                                        <div class="hidden p-4 bg-white rounded-lg dark:bg-gray-50 " id="stats" role="tabpanel" aria-labelledby="stats-tab">
 
 
                                             <dl class=" text-gray-900  dark:text-white ">
@@ -274,7 +274,7 @@
 
                                                 <tbody class="bg-white">
                                                     <tr>
-                                                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                        <td style="width: 20%;" class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                                             <div class="flex items-center">
 
                                                                 <div class="ml-4">
@@ -284,20 +284,20 @@
                                                             </div>
                                                         </td>
 
-                                                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                        <td style="width: 20%;" class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                                             <div class="flex-shrink-0 w-10 h-10">
-                                                                <img class="w-10 h-10 rounded" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                                                                <img class="w-10 h-10 rounded" src="https://conteudo.imguol.com.br/c/entretenimento/c9/2021/08/20/donuts-de-doce-de-leite-1629478449295_v2_300x400.jpg" alt="">
                                                             </div>
                                                         </td>
 
-                                                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                        <td style="width: 20%;" class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                                             R$ 92876,99
                                                         </td>
 
-                                                        <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
+                                                        <td style="width: 30%;" class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
                                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ratione illum facere expedita animi, soluta debitis corporis voluptatem impedit harum dolore id et fugit aut veniam a. Repudiandae, tempore sunt?</td>
 
-                                                        <td class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap border-b border-gray-200">
+                                                        <td style="width: 10%;" class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap border-b border-gray-200">
                                                             <a href="#" class="text-indigo-600 hover:text-indigo-900">Excluir</a>
                                                         </td>
                                                     </tr>
