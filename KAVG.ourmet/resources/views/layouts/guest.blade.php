@@ -15,7 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans text-white-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-black-100 dark:bg-black">
+        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-black dark:bg-black">
             <div>
                 <a href="/">
                 <img src="{{ asset('img/logo.png') }}" alt="Descrição da imagem">
@@ -23,7 +23,7 @@
                 </a>
             </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-marrom-claro shadow-md overflow-hidden sm:rounded-lg">
+            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-marrom-claro dark:bg-marrom-claro shadow-md overflow-hidden sm:rounded-lg">
                 {{ $slot }}
             </div>
         </div>

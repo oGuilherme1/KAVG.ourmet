@@ -22,6 +22,7 @@ export default {
           colors: {
             'marrom': '#331B17',
             'marrom-claro': '#E1BDA0',
+            'off_white': '#f5f5f5'
           }
         }
       },
