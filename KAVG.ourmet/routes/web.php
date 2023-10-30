@@ -4,6 +4,9 @@ use App\Http\Controllers\CarShoppingController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Models\CarShopping;
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,7 +35,10 @@ Route::get('/users', [UserController::class,'index'])->name('users');
 Route::get('/car-shopping', [CarShoppingController::class, 'index'])->name('carShoppings');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $produtos = Product::all();
+    $carrinho = CarShopping::all();
+    $usuario = User::all();
+    return view('dashboard', ['produtos' => $produtos, 'carrinho' => $carrinho,'usuario'=> $usuario]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
