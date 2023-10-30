@@ -18,7 +18,7 @@ class ProductFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'imagem' => fake()->url(),
+            'imagem' => fake()->imageUrl( 640, 480, 'food'),
             'valor' => fake()->numerify(),
             'descricao' => fake()->text(),
         ];

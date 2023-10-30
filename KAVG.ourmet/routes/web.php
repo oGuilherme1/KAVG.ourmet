@@ -22,11 +22,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
-Route::get('/Produtos', function () {
-    return view('produto');
-})->middleware(['auth', 'verified'])->name('produtos');
+Route::get('/Catalogo', function () {
+    return view('catalogo');
+})->name('catalogo');
+
+
 
 Route::get('/products', [ProductController::class,'index'])->name('products');
 
