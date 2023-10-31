@@ -28,13 +28,14 @@ Route::get('/Catalogo', function () {
     return view('catalogo');
 })->name('catalogo');
 
-
-
 Route::get('/products', [ProductController::class,'index'])->name('products');
+Route::get('/products/{product_id}', [ProductController::class,'destroy'])->name('products.destroy');
 
 Route::get('/users', [UserController::class,'index'])->name('users');
+Route::get('/users/{user_id}', [UserController::class,'destroy'])->name('user.destroy');
 
 Route::get('/car-shopping', [CarShoppingController::class, 'index'])->name('carShoppings');
+Route::get('/car-shopping/{car_shopping_id}', [CarShoppingController::class, 'destroy'])->name('carShopping.destroy');
 
 Route::get('/dashboard', function () {
     $produtos = Product::all();
