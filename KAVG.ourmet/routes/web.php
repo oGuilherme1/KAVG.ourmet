@@ -32,6 +32,10 @@ Route::get('/detailProduct', function () {
     return view('detailProduct');
 })->name('detailProduct');
 
+Route::get('/sobreNos', function () {
+    return view('sobreNos');
+})->name('sobreNos');
+
 
 
 Route::get('/products', [ProductController::class,'index'])->name('products');
