@@ -208,7 +208,7 @@
 
                                                         <td
                                                             class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap border-b border-gray-200">
-                                                            <a href="#"
+                                                            <a href="{{route('user.destroy', $usuario->id)}}"
                                                                 class="text-indigo-600 hover:text-indigo-900">Excluir</a>
                                                         </td>
                                                     </tr>
@@ -281,7 +281,7 @@
 
                                                     <td
                                                         class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap border-b border-gray-200">
-                                                        <a href="#"
+                                                        <a href="{{route('carShopping.destroy', $carrinho->id)}}"
                                                             class="text-indigo-600 hover:text-indigo-900">Excluir</a>
                                                     </td>
                                                 </tr>
@@ -348,7 +348,7 @@
 
                                                     <td style="width: 10%;"
                                                         class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap border-b border-gray-200">
-                                                        <a href="#"
+                                                        <a href="{{route('products.destroy', $produtos->id)}}"
                                                             class="text-indigo-600 hover:text-indigo-900">Excluir</a>
                                                     </td>
                                                 </tr>
