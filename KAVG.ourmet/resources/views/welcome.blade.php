@@ -60,7 +60,7 @@
                     </div>
                     <div class="flex flex-col sm:hidden">
                         <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="{{ route('login') }}">Login</a>
-                            <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="{{ route('register') }}">Cadastrar</a>
+                        <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="{{ route('register') }}">Cadastrar</a>
                     </div>
 
                 </nav>
@@ -129,35 +129,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="md:flex mt-8 md:-mx-4">
-                    <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('https://img.freepik.com/fotos-gratis/brownie-caseiro-recem-assado-na-mesa-rustica-gerada-por-ia_188544-33198.jpg?w=1380&t=st=1698597096~exp=1698597696~hmac=7bc7db60cd8f695d0aec42b4d44cb6941f8338452fa993cbc26b1714cbd3af86')">
-                        <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
-                            <div class="px-10 max-w-xl">
-                                <h2 class="text-2xl text-white font-semibold">Bolo</h2>
-                                <p class="mt-2 text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore facere provident molestias ipsam sint voluptatum pariatur.</p>
-                                <button class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
-                                    <span>Shop Now</span>
-                                    <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full h-64 mt-8 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:mt-0 md:w-1/2" style="background-image: url('https://img.freepik.com/fotos-gratis/biscoitos-caseiros-com-gotas-de-chocolate-uma-doce-indulgencia-gerada-pela-ia_188544-25247.jpg?size=626&ext=jpg&ga=GA1.1.2137598048.1692735460')">
-                        <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
-                            <div class="px-10 max-w-xl">
-                                <h2 class="text-2xl text-white font-semibold">Cokkie</h2>
-                                <p class="mt-2 text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore facere provident molestias ipsam sint voluptatum pariatur.</p>
-                                <button class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
-                                    <span>Shop Now</span>
-                                    <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="md:flex mt-8 md:-mx-4 shop_now">
                 </div>
                 <div class="mt-16">
                     <h3 class="text-gray-600 text-2xl font-medium">Novidades</h3>
@@ -229,3 +201,50 @@
 </body>
 
 </html>
+
+<script>
+    async function getProducts() {
+    try {
+        const response = await fetch('/products');
+        const data = await response.json();
+        return data.data;
+    } catch (error) {
+        console.error('Erro ao obter produtos:', error);
+        return [];
+    }
+}
+
+async function renderProducts() {
+    try {
+        const products = await getProducts();
+        const container = document.querySelector('.shop_now');
+
+        products.slice(0, 2).forEach(product => {
+            const productCard = `
+                <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('${product.imagem}')">
+                    <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
+                        <div class="px-10 max-w-xl">
+                            <h2 class="text-2xl text-white font-semibold">${product.name}</h2>
+                            <p class="mt-2 text-gray-400">${product.descricao}</p>
+                            <button class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
+                                <a href="/detailProduct">Shop Now</a>
+                                <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            container.innerHTML += productCard;
+        });
+
+    } catch (error) {
+        console.error('Erro ao renderizar produtos:', error);
+    }
+}
+
+renderProducts();
+
+</script>

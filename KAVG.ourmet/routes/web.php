@@ -28,6 +28,10 @@ Route::get('/Catalogo', function () {
     return view('catalogo');
 })->name('catalogo');
 
+Route::get('/detailProduct', function () {
+    return view('detailProduct');
+})->name('detailProduct');
+
 
 
 Route::get('/products', [ProductController::class,'index'])->name('products');

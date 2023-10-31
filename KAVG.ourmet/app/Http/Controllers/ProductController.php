@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Routing\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class ProductController extends Controller
 {
@@ -11,4 +13,12 @@ class ProductController extends Controller
 
         return $products;
     }
+
+    public function getProductsId(Request $request){
+        $data = $request->all();
+
+        dd($data);
+    }
+
+
 }
