@@ -3,13 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-<<<<<<< HEAD
 use Illuminate\Routing\Controller;
 use Symfony\Component\HttpFoundation\Request;
-=======
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
->>>>>>> 900d4f02491f88e6673ccb2303a8f7c0a22fff24
 
 class ProductController extends Controller
 {
@@ -19,21 +14,14 @@ class ProductController extends Controller
         return $products;
     }
 
-<<<<<<< HEAD
-    public function getProductsId(Request $request){
-        $data = $request->all();
+    public function getProductsId($id){
+        
+        $products = Product::where('id', $id)->first();
+        
+        return view('detailProduct', ['products' => $products]);
 
-        dd($data);
+    
     }
 
 
-=======
-    public function destroy(Request $request)
-    {
-        $product = Product::find($request->product_id);
-        $product->delete();
-
-        return Redirect::route('dashboard');
-    }
->>>>>>> 900d4f02491f88e6673ccb2303a8f7c0a22fff24
 }

@@ -28,17 +28,15 @@ Route::get('/Catalogo', function () {
     return view('catalogo');
 })->name('catalogo');
 
-<<<<<<< HEAD
 Route::get('/detailProduct', function () {
     return view('detailProduct');
 })->name('detailProduct');
 
 
 
-=======
->>>>>>> 900d4f02491f88e6673ccb2303a8f7c0a22fff24
 Route::get('/products', [ProductController::class,'index'])->name('products');
-Route::get('/products/{product_id}', [ProductController::class,'destroy'])->name('products.destroy');
+Route::get('/products/{product_id}', [ProductController::class,'getProductsId'])->name('productsId');
+Route::delete('/products/{product_id}', [ProductController::class,'destroy'])->name('products.destroy');
 
 Route::get('/users', [UserController::class,'index'])->name('users');
 Route::get('/users/{user_id}', [UserController::class,'destroy'])->name('user.destroy');
