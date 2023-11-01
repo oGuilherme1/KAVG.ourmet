@@ -348,7 +348,7 @@
 
                                                     <td style="width: 10%;"
                                                         class="px-6 py-4 text-sm font-medium leading-5 text-right whitespace-no-wrap border-b border-gray-200">
-                                                        <a href="{{route('products.destroy', $produtos->id)}}"
+                                                        <a href="{{ route('products.destroy', $produtos->id) }}"
                                                             class="text-indigo-600 hover:text-indigo-900">Excluir</a>
                                                     </td>
                                                 </tr>

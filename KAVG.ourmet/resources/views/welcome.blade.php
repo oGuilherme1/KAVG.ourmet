@@ -22,9 +22,9 @@
                 <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('https://img.freepik.com/fotos-gratis/variedade-indulgente-de-colecao-de-sobremesas-de-doces-frescos-gerados-por-ia_188544-36214.jpg?w=1380&t=st=1698596127~exp=1698596727~hmac=7ede163645c4dfa19d996da4cf4623779fa6b239146bca4b5bfd0bc2542c78ba')">
                     <div class="bg-gray-900 bg-opacity-50 flex items-center h-full  ">
                         <div class="px-10 max-w-xl">
-                            <h2 class="text-2xl text-white font-semibold">Catalogo</h2>
-                            <p class="mt-2 text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore facere provident molestias ipsam sint voluptatum pariatur.</p>
-                            <button class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                            <h1 class="text-2xl text-white font-semibold">Catalogo</h1>
+                            <p class="mt-2 text-white">Em nosso catálogo, você encontrará uma variedade de deliciosas guloseimas, incluindo chocolates, bolos, gomas, caramelos e muito mais para satisfazer sua vontade de doces.</p>
+                            <button class="flex items-center mt-4 px-3 py-2 bg-marrom text-white text-sm uppercase font-medium rounded hover:bg-marrom-claro focus:outline-none focus:bg-marrom">
                                 <a href="{{ route('catalogo') }}">Visualizar</a>
                                 <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                     <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -43,7 +43,13 @@
                 </div>
             </div>
         </main>
-        @include('footer')
+
+        <footer class="bg-gray-200">
+            <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+                <a href="#" class="text-xl font-bold text-gray-500 hover:text-gray-400">Brand</a>
+                <p class="py-2 text-gray-500 sm:py-0">All rights reserved</p>
+            </div>
+        </footer>
     </div>
 </body>
 
@@ -51,23 +57,23 @@
 
 <script>
     async function getProducts() {
-    try {
-        const response = await fetch('/products');
-        const data = await response.json();
-        return data.data;
-    } catch (error) {
-        console.error('Erro ao obter produtos:', error);
-        return [];
+        try {
+            const response = await fetch('/products');
+            const data = await response.json();
+            return data.data;
+        } catch (error) {
+            console.error('Erro ao obter produtos:', error);
+            return [];
+        }
     }
-}
 
-async function renderProducts() {
-    try {
-        const products = await getProducts();
-        const container = document.querySelector('.shop_now');
+    async function renderProducts() {
+        try {
+            const products = await getProducts();
+            const container = document.querySelector('.shop_now');
 
-        products.slice(0, 2).forEach(product => {
-            const productCard = `
+            products.slice(0, 2).forEach(product => {
+                const productCard = `
                 <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('${product.imagem}')">
                     <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                         <div class="px-10 max-w-xl">
@@ -84,21 +90,21 @@ async function renderProducts() {
                 </div>
             `;
 
-            container.innerHTML += productCard;
-        });
+                container.innerHTML += productCard;
+            });
 
-    } catch (error) {
-        console.error('Erro ao renderizar produtos:', error);
+        } catch (error) {
+            console.error('Erro ao renderizar produtos:', error);
+        }
     }
-}
 
-async function renderNovidadeProdutos() {
-    try {
-        const products = await getProducts();
-        const container = document.querySelector('.novidade-container');
+    async function renderNovidadeProdutos() {
+        try {
+            const products = await getProducts();
+            const container = document.querySelector('.novidade-container');
 
-        products.slice(0, 4).forEach(product => {
-            const productCard = `
+            products.slice(0, 4).forEach(product => {
+                const productCard = `
                         <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
                             <div class="flex items-end justify-end h-56 w-full bg-cover" style="background-image: url('${product.imagem}')">
                             <a class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500" href="/products/${product.id}" }}" >
@@ -114,15 +120,14 @@ async function renderNovidadeProdutos() {
                         </div>
             `;
 
-            container.innerHTML += productCard;
-        });
+                container.innerHTML += productCard;
+            });
 
-    } catch (error) {
-        console.error('Erro ao renderizar produtos:', error);
+        } catch (error) {
+            console.error('Erro ao renderizar produtos:', error);
+        }
     }
-}
 
-renderProducts();
-renderNovidadeProdutos();
-
+    renderProducts();
+    renderNovidadeProdutos();
 </script>
