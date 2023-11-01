@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\CarShoppingController;
+use App\Models\User;
+use App\Models\Product;
+use App\Models\CarShopping;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserController;
-use App\Models\CarShopping;
-use App\Models\Product;
-use App\Models\User;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarShoppingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,9 @@ Route::get('/sobreNos', function () {
 Route::get('/products', [ProductController::class,'index'])->name('products');
 Route::get('/products/{product_id}', [ProductController::class,'getProductsId'])->name('productsId');
 Route::delete('/products/{product_id}', [ProductController::class,'destroy'])->name('products.destroy');
+
+Route::post('/carrinho/adicionar/{product}', [CarShoppingController::class, 'add'])->name('cart.add');
+Route::get('/carrinho/verSessao', [CarShoppingController::class, 'verSessao'])->name('cart.verSessao');
 
 Route::get('/users', [UserController::class,'index'])->name('users');
 Route::get('/users/{user_id}', [UserController::class,'destroy'])->name('user.destroy');
