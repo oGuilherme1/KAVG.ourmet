@@ -60,7 +60,7 @@ class CarShoppingController extends Controller
     {
         $cart = session()->get('cart', []);
 
-        return view('header_carrinho', ['carrinho' => $cart]);
+        return $cart;
 
     }
 
