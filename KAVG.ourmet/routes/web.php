@@ -41,7 +41,7 @@ Route::get('/sobreNos', function () {
 
 Route::get('/products', [ProductController::class,'index'])->name('products');
 Route::get('/products/{product_id}', [ProductController::class,'getProductsId'])->name('productsId');
-Route::delete('/products/{product_id}', [ProductController::class,'destroy'])->name('products.destroy');
+Route::get('/products/{product_id}', [ProductController::class,'destroy'])->name('products.destroy');
 
 Route::post('/carrinho/adicionar/{product}', [CarShoppingController::class, 'add'])->name('cart.add');
 Route::get('/carrinho/verSessao', [CarShoppingController::class, 'verSessao'])->name('cart.verSessao');
