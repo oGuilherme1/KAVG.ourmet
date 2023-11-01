@@ -52,8 +52,6 @@
             <div class="flex flex-col sm:flex-row">
                 <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="{{ route('home') }}">Home</a>
                 <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="{{ route('catalogo') }}">Catalogo</a>
-                <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">Categories</a>
-                <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">Contact</a>
                 <a class="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="{{ route('sobreNos') }}">Sobre Nós</a>
             </div>
             <div class="flex flex-col sm:hidden">
