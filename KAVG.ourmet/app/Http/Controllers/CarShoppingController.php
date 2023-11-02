@@ -33,6 +33,7 @@ class CarShoppingController extends Controller
 
 
         $cart[$product->id]['quantidade']++;
+        $cart[$product->id]['valor'] = $product->valor * $cart[$product->id]['quantidade'];
 
         session()->put('cart', $cart);
 
