@@ -9,8 +9,9 @@ use Illuminate\Support\Facades\Redirect;
 
 class CarShoppingController extends Controller
 {
-    public function index(){
-        $carShopping = CarShopping::orderBy("created_at","desc")->paginate(10);
+    public function index()
+    {
+        $carShopping = CarShopping::orderBy("created_at", "desc")->paginate(10);
 
         return $carShopping;
     }
@@ -18,7 +19,7 @@ class CarShoppingController extends Controller
     public function add(Product $product)
     {
         $cart = session()->get('cart', []);
-        
+
         if (!isset($cart[$product->id])) {
             $cart[$product->id] = [
                 "id" => $product->id,
@@ -29,7 +30,7 @@ class CarShoppingController extends Controller
                 'quantidade' => 0
             ];
         }
-        
+
 
         $cart[$product->id]['quantidade']++;
 
@@ -40,28 +41,29 @@ class CarShoppingController extends Controller
 
     public function remove(Product $product)
     {
-        $cart = session()->get('cart', []);
+        // $cart = session()->get('cart', []);
+
+        // if (isset($cart[$product->id])) {
+        //     $cart[$product->id]['quantidade']--;
+
+        //     if ($cart[$product->id]['quantidade'] <= 0) {
+        //         unset($cart[$product->id]);
+        //     }
+
+        //     session()->put('cart', $cart);
+        // }
+
+        // Dentro do seu controlador ou rota
+        session()->flush();
 
 
-
-        if (isset($cart[$product->id])) {
-            $cart[$product->id]['quantity']--;
-
-            if ($cart[$product->id]['quantity'] <= 0) {
-                unset($cart[$product->id]);
-            }
-
-            session()->put('cart', $cart);
-        }
-
-        return redirect()->route('cart.show');
+        return back()->with('mensagem', 'A operação foi realizada com sucesso!');
     }
     public function verSessao()
     {
         $cart = session()->get('cart', []);
 
         return $cart;
-
     }
 
     public function destroy(Request $request)
@@ -71,5 +73,4 @@ class CarShoppingController extends Controller
 
         return Redirect::route('dashboard');
     }
-
 }

@@ -38,11 +38,12 @@ Route::get('/sobreNos', function () {
 })->name('sobreNos');
 
 Route::get('/products', [ProductController::class,'index'])->name('products');
-Route::get('/products/{product_id}', [ProductController::class,'getProductsId'])->name('productsId');
+Route::get('/products/{product_id}/car', [ProductController::class,'getProductsId'])->name('productsId');
 Route::get('/products/{product_id}', [ProductController::class,'destroy'])->name('products.destroy');
 
 Route::post('/carrinho/adicionar/{product}', [CarShoppingController::class, 'add'])->name('cart.add');
 Route::get('/carrinho/verSessao', [CarShoppingController::class, 'verSessao'])->name('cart.verSessao');
+Route::get('/carrinho/removerItem', [CarShoppingController::class, 'remove'])->name('cart.removerItem');
 
 
 Route::get('/users', [UserController::class,'index'])->name('users');
